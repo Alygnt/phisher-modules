@@ -1,0 +1,7 @@
+Package: nphisher
+Version: 1.2
+Architecture: all
+Maintainer: @Alygnt
+Depends: curl, php, unzip, wget
+Homepage: https://github.com/alygnt/nphisher
+Description: World's most powerful phishing tool
