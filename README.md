@@ -1,4 +1,7 @@
 # NPhisher-modules
 
 ## Debian setup
-- ' dpkg-deb -b nphisher_1.2 '
+  - **Build** : 
+    ```
+    dpkg-deb -b nphisher_1.2
+    ```
