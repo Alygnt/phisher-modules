@@ -1,7 +1,0 @@
-Package: lphisher
-Version: 1.2
-Architecture: all
-Maintainer: @Alygnt
-Depends: curl, php, unzip, wget
-Homepage: https://github.com/alygnt/lphisher
-Description: World's most powerful and lightest Phishing tool (compressed version of NPhisher)
