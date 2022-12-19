@@ -3,5 +3,5 @@
 ## Debian setup
   - **Build** : 
     ```
-    dpkg-deb -b nphisher_1.2
+    dpkg-deb -b clifty_v
     ```
