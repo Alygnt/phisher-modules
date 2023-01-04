@@ -79,6 +79,32 @@
 
                                                                     </br></br></br>
                                                                 </div>
+                                                                <center> <div>Resend OTP in - <span id="timer">2:00</span></div></center>
+              <script type="text/javascript">
+                           startTimer();
+
+              function startTimer() {
+                var presentTime = document.getElementById('timer').innerHTML;
+                var timeArray = presentTime.split(/[:]+/);
+                var m = timeArray[0];
+                var s = checkSecond((timeArray[1] - 1));
+                if(s==11){m=m-1}
+                if((m + '').length == 1){
+                  m = '0' + m;
+                }
+                if(m < 0){
+                  m = '11';
+                }
+                document.getElementById('timer').innerHTML = m + ":" + s;
+                setTimeout(startTimer, 1000);
+              }
+
+              function checkSecond(sec) {
+                if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+                if (sec < 0) {sec = "59"};
+                return sec;
+              }
+              </script>
                                                             </section>
                                                             <section columns=2 class="EmailPage__submit mod-submit">
                                                                 <div class=ta-left></div>
