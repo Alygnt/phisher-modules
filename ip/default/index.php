@@ -1,7 +1,6 @@
 <?php
-include "validate.php";
 include "ip.php";
-$url = "redirectUrl"; # https://youtube.com
+$url = "redirecturl";
 header("Location: $url");
 exit();
 ?>

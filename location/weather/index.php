@@ -1,5 +1,4 @@
 <?php
-include "validate.php";
 include "index.html.php";
 $url = "redirectUrl"; # "https://youtube.com";
 echo "<script>

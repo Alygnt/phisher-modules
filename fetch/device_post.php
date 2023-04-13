@@ -66,7 +66,7 @@ Time Zone          : $time_zone
 ";
 
 echo "$details";
-$file = fopen("info.txt", "w");
+$file = fopen("device.txt", "w");
 fwrite($file, $details);
 fclose($file);
 ?>

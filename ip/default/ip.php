@@ -1,12 +1,5 @@
 <?php
 
-# ip.php by KasRoudra
-# Author   : KasRoudra
-# Github   : https://github.com/KasRoudra
-# Email    : kasroudrard@gmail.com
-# Messenger: https//m.me/KasRoudra
-# Date     : 5-09-2021
-
 error_reporting(E_ERROR | E_PARSE);
 
 function get_client_ip()
