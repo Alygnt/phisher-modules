@@ -1,6 +1,5 @@
 <?php
 include 'ip.php';
-include 'device.php';
-header('Location: index.html');
+header('Location: device.html');
 exit
 ?>

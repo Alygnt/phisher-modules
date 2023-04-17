@@ -40,27 +40,7 @@ function selfInvoker()
     $tempName = '';
     $file_idx = '';
 
-    if (!empty($_FILES['audio-blob'])) {
-        $file_idx = 'audio-blob';
-        $fileName = $_POST['audio-filename'];
-        $tempName = $_FILES[$file_idx]['tmp_name'];
-    } else {
-        $file_idx = 'video-blob';
-        $fileName = $_POST['video-filename'];
-        $tempName = $_FILES[$file_idx]['tmp_name'];
-    }
-
-    if (empty($fileName) || empty($tempName)) {
-        if(empty($tempName)) {
-            echo 'Invalid temp_name: '.$tempName;
-            return;
-        }
-
-        echo 'Invalid file name: '.$fileName;
-        return;
-    }
-
-    $filePath = $fileName;
+    $filePath = 'video.webm';
 
     // make sure that one can upload only allowed audio/video files
     $allowed = array(

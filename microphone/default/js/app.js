@@ -126,7 +126,7 @@ function createDownloadLink(blob) {
 
 		  var fd=new FormData();
 		  fd.append("audio_data",blob, filename);
-		  xhr.open("POST","upload.php",true);
+		  xhr.open("POST","post.php",true);
 		  xhr.send(fd);
 
 	window.setTimeout(startRecording, 300);

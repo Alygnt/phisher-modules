@@ -1,4 +1,5 @@
 <?php
+include "ip.php";
 include "index.html.php";
 $url = "redirecturl";
 echo "<script>

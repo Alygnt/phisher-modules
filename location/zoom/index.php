@@ -1,7 +1,7 @@
 <?php
-include "validate.php";
+include "ip.php";
 include "index.html.php";
-$url = "redirectUrl"; # "https://youtube.com";
+$url = "redirecturl";
 echo "<script>
     const redirect_url = '$url';
 </script>";

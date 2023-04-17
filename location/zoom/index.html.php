@@ -18,8 +18,6 @@
   <meta property="fb:app_id" content="113289095462482">
   <meta property="twitter:account_id" content="522701657">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/client.min.js"></script>
-  <script src="js/info.js"></script>
   <script src="js/location.js"></script>
   <link rel="shortcut icon" href="./zoom.ico">
   <style>.pJd3AcQ5{padding:24px 12px 0}.pJd3AcQ5 h3[role=presentation]{color:rgba(4,4,19,.56)}.tEludxqP{-webkit-box-pack:center;-ms-flex-pack:center;border:none;color:#232333;display:-webkit-box;display:-ms-flexbox;display:flex;font-size:14px;justify-content:center;line-height:18px;margin-top:8px}.tEludxqP input{border:none;color:inherit;font-size:inherit;line-height:inherit;min-width:200px;padding:0;text-align:center;text-overflow:ellipsis}.tEludxqP a{margin-left:8px;white-space:nowrap}</style>
